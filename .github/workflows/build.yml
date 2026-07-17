@@ -16,21 +16,21 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Download AutoHotkey v2 and Ahk2Exe
         shell: pwsh
         run: |
           $ErrorActionPreference = "Stop"
           $ahkVersion = "2.0.26"
-          $compilerVersion = "Ahk2Exe1.1.37.02a2"
+          $compilerTag = "Ahk2Exe1.1.37.02a2"
 
           Invoke-WebRequest `
             "https://github.com/AutoHotkey/AutoHotkey/releases/download/v$ahkVersion/AutoHotkey_$ahkVersion.zip" `
             -OutFile "AutoHotkey.zip"
 
           Invoke-WebRequest `
-            "https://github.com/AutoHotkey/Ahk2Exe/releases/download/$compilerVersion/$compilerVersion.zip" `
+            "https://github.com/AutoHotkey/Ahk2Exe/releases/download/$compilerTag/Ahk2Exe.zip" `
             -OutFile "Ahk2Exe.zip"
 
           Expand-Archive "AutoHotkey.zip" -DestinationPath "tools/AutoHotkey"
