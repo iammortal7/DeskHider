@@ -30,7 +30,7 @@ jobs:
             -OutFile "AutoHotkey.zip"
 
           Invoke-WebRequest `
-            "https://github.com/AutoHotkey/Ahk2Exe/releases/download/$compilerTag/Ahk2Exe.zip" `
+            "https://github.com/AutoHotkey/Ahk2Exe/releases/download/$compilerTag/$compilerTag.zip" `
             -OutFile "Ahk2Exe.zip"
 
           Expand-Archive "AutoHotkey.zip" -DestinationPath "tools/AutoHotkey"
